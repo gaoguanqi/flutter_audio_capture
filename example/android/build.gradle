@@ -2,7 +2,13 @@ buildscript {
     ext.kotlin_version = '1.9.10'
     repositories {
         google()
+        mavenCentral()
         jcenter()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven { url "https://s01.oss.sonatype.org/content/groups/public" }
+        maven { url "https://frontjs-static.pgyer.com/dist/sdk/pgyersdk" }
     }
 
     dependencies {
@@ -14,13 +20,19 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenCentral()
         jcenter()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven { url "https://s01.oss.sonatype.org/content/groups/public" }
+        maven { url "https://frontjs-static.pgyer.com/dist/sdk/pgyersdk" }
     }
 }
 
 rootProject.buildDir = '../build'
 subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
+//    project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
     project.evaluationDependsOn(':app')
